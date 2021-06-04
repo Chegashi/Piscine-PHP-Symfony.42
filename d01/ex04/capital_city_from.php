@@ -1,7 +1,4 @@
-//d'idnt work
 <?php
-    global $capitals,$states;
-
      $states = [
         'Oregon' => 'OR',
         'Alabama' => 'AL',
@@ -10,18 +7,18 @@
         ];
     $capitals = [
         'OR' => 'Salem',
-        'AL' =>
-        'Montgomery',
+        'AL' =>'Montgomery',
         'NJ' => 'trenton',
         'KS' => 'Topeka',
     ];
 
-    function capital_city_from($name_states , $states=$states, $capitals= $capitals )
+    function capital_city_from($name_states)
     {
-            if($states[$name_states]) 
-                print($capitals[$states[$name_states]]);
-            else
-                print ('Unknown');
-            print_r($states);
-        }
+		global $capitals,$states;
+
+        if(array_key_exists($name_states, $states))
+            echo($capitals[$states[$name_states]]).PHP_EOL;
+    	else
+            echo ('Unknown'.PHP_EOL);
+	}
 ?>
